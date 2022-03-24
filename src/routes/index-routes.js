@@ -47,7 +47,7 @@ router.get(`/api/igscrap/searchbytag/test/`, (req, res) => {
 router.get(`/`, (req, res) => {
 
    
-        res.status(400).send(
+        res.status(200).send(
             "a"
         );
     
