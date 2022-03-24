@@ -3,7 +3,7 @@ const router = express.Router();
 var ig = require('instagram-scraping');
 
 //get instagram posts by tag and user
-router.get(`/api/igscrap/`, (req, res) => {
+router.get(`/api/igscrap/searchbytag/`, (req, res) => {
     if (
         req.query.tag !== undefined ||
         req.query.user !== undefined
@@ -28,7 +28,7 @@ router.get(`/api/igscrap/`, (req, res) => {
 });
 
 //get instagram posts by tag
-router.get(`/api/igscrap/test/`, (req, res) => {
+router.get(`/api/igscrap/searchbytag/test/`, (req, res) => {
     if (req.query.tag !== undefined) {
         ig.scrapeTag(req.query.tag).then((result) => {
             let medias = result.medias
