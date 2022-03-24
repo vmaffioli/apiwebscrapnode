@@ -44,13 +44,22 @@ router.get(`/api/igscrap/searchbytag/test/`, (req, res) => {
 });
 
 
-router.get(`/`, (req, res) => {
-
-   
-        res.status(200).send(
-            "a"
-        );
+router.get(`/`, search);
     
-});
+
+function search(req, res, next){
+    if (req.query.tag !== undefined) {
+        ig.scrapeTag(req.query.tag).then((result) => {
+            let medias = result.medias
+            res.status(200).send(
+                medias
+            );
+        });
+    } else {
+        res.status(400).send(
+            "bad request syntax"
+        );
+    }
+}
 
 module.exports = router;
