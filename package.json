@@ -1,0 +1,17 @@
+{
+  "name": "webscrapnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "vmaffioli",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "instagram-scraping": "^1.0.17"
+  }
+}
